@@ -1,9 +1,6 @@
 <html>
 	<head>
 		<link href="/src/stylesheets/popup.css" rel="stylesheet" type="text/css" />
-
-		<script src="/lib/zepto.min.js"></script>
-		<script src="popup.js"></script>
 		<style type="text/css">
 			body {
 				margin: 0px !important;
@@ -11,14 +8,45 @@
 			iframe {
 				height: 100%;
 				width: 100%;
+				border: 0;
+				display: none;
 			}
+			div#loader {
+				top: 0;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				position: absolute;
+				text-align: center;
+			}
+				div#loader:before{
+					content: ' ';
+					display: inline-block;
+					vertical-align: middle;
+					height: 100%;
+				}
+
+				div#loader img {
+					vertical-align: middle;
+					display: inline-block;
+				}
 		</style>
 	</head>
 
 	<body>
 		<div class="container">
-			<div id="contact-list"></div>
-			<iframe src=""></iframe>
+			<div id="loader">
+				<img src="img/loader.gif">
+			</div>
+			<iframe src="https://login.eloqua.com/Apps/Cloud/Admin/Galactus?returnPath=/salesTools/profiler?q=oracle"></iframe>
 		</div>
+		<script src="/lib/zepto.min.js"></script>
+		<script src="popup.js"></script>
 	</body>
 </html>
+
+<!--
+
+https://login.eloqua.com/autoLogin?LoginPrefix=ORPM&Url=/Apps/Cloud/Admin/Galactus?returnPath=/salesTools/profiler?emailAddress=egan.cheung@oracle.com
+
+-->

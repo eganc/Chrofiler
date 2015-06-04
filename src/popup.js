@@ -3,4 +3,9 @@ $(function() {
   chrome.runtime.sendMessage({opened: true}, function(response) {
     console.log(response.example);
   });
+
+  $("iframe").on("load",function() {
+  	$("#loader").hide();
+  	$(this).show();
+  });
 });
